@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a7497d3-d6d1-43ba-ace4-8c714fe8b27e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hood/templates/create_profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hood/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hood/migrations/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hood/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/hood/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hood/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/hood/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hood/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/hood/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hood/templates/create_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/hood/templates/create_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hood/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hood/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hood/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hood/views.py" afterDir="false" />
     </list>

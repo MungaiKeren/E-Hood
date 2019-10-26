@@ -32,7 +32,8 @@ class Business(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='biz_pic/', blank=True, default='biz_pic/bizpic.jpg')
     owner = models.ForeignKey(User, on_delete=models.CASCADE, default='no business')
-    hood = models.ForeignKey(Hood, on_delete=models.CASCADE, default='myHood')
+    details = models.TextField(max_length=500)
+    hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.name}'

@@ -9,6 +9,7 @@
         {% csrf_token %}
         {{u_form|crispy}}
         {{p_form|crispy}}
+        <button type="submit" class="btn btn-sm btn-outline-info">Submit</button>
     </form>
 </div>
 {% endblock %}
