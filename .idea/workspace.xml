@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a7497d3-d6d1-43ba-ace4-8c714fe8b27e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/keren.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/keren.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/scripts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neighbourhood/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Neighbourhood/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hood/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/hood/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hood/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/hood/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hood/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hood/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hood/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/hood/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hood/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hood/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +22,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunDashboard">
@@ -66,5 +65,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
