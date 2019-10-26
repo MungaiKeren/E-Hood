@@ -1,4 +1,4 @@
-{% extends 'register/reg_base.html' %}
+{% extends 'registration/reg_base.html' %}
 {% block title %}
 <title>Login</title>
 {% endblock %}
@@ -12,7 +12,7 @@
             <hr>
             <form action="" method="post" class="form-group container">
                 {% csrf_token %}
-                {{form.as_p|crispy}}
+                {{form|crispy}}
                 <p>Don't have an account?<a href="/register/">Sign Up</a></p>
                 <button type="submit" class="btn btn-success">Login</button>
             </form>
