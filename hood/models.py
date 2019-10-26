@@ -23,7 +23,7 @@ class Profile(models.Model):
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE, default='myHood')
 
     def __str__(self):
-        return f'{self.user.username}'
+        return f'{self.user.username} Profile'
 
 
 class Business(models.Model):
