@@ -3,11 +3,28 @@
 {{block.super}}
 <div class="container-fluid mt-4">
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-4">
           <h2>This hood has 7 members</h2>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-4">
             <h2>Business</h2>
+            {% for biz in business %}
+            <div class="card mb-4 mt-2">
+                <div class="card-header">
+                    <h5>{{biz.name}}</h5>
+                </div>
+                <div class="card-title">
+                    <img src="{{biz.image.url}}" width="100%" class="img-responsive" alt="business image">
+                </div>
+                <div class="card-footer">
+                    <h5>Address: {{biz.address}}<br>Owner:{{biz.owner}}
+                        <br>Joined: {{biz.create_date|time}}</h5>
+                    <h5>{{biz.details}}</h5>
+                </div>
+            </div>
+            {% empty %}
+            <p>There are no businesses for this hood yet</p>
+            {% endfor %}
         </div>
     </div>
 </div>
