@@ -1,31 +1,71 @@
 {%extends 'base.html'%}
 {% block content %}
 {{block.super}}
+<style>
+    .card{
+        height:75vh;
+    }
+</style>
 <div class="container-fluid mt-4">
     <div class="row">
+        {% if business%}
+        {% for biz in business %}
         <div class="col-md-4">
-          <h2>This hood has 7 members</h2>
-        </div>
-        <div class="col-md-4">
-            <h2>Business</h2>
-            {% for biz in business %}
-            <div class="card mb-4 mt-2">
-                <div class="card-header">
-                    <h5>{{biz.name}}</h5>
+            <div class="card card-default">
+                <div class="card-heading inline">
+                    <div class="row">
+                        <div class="col-md-4 mt-2 mb-2 text-center">
+                            <a href="{%url 'profile'%}" style="color:black;">
+                                <img src="{{biz.owner.profile.image.url}}" class="img-responsive rounded-circle" style="width:50px; height:50px;" alt="profile image">
+                            </a>
+                        </div>
+                        <div class="col-md-8 mt-2 mb-2">
+                            <h4>{{biz.name}}</h4>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-title">
-                    <img src="{{biz.image.url}}" width="100%" class="img-responsive" alt="business image">
+                    <div class=" view overlay zoom" style="height: 245px; padding:2%;">
+                        <img src="{{biz.image.url}}" width="100%" class="img-responsive" alt="business image">
+                    </div>
                 </div>
                 <div class="card-footer">
                     <h5>Address: {{biz.address}}<br>Owner:{{biz.owner}}
-                        <br>Joined: {{biz.create_date|time}}</h5>
+                       <br>Joined: {{biz.create_date|time}}</h5>
                     <h5>{{biz.details}}</h5>
                 </div>
             </div>
-            {% empty %}
-            <p>There are no businesses for this hood yet</p>
-            {% endfor %}
+            <br>
         </div>
+        {% endfor %}
+        {% else %}
+        <p>No Projects have been posted for view yet</p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
+
+<div class="col-md-8 container">
+            <div class="row">
+                {% for biz in business %}
+                <div class="col-md-4">
+                    <div class="card card-default">
+                        <div class="card-heading">
+                            <h5>{{biz.name}}</h5>
+                        </div>
+                        <div class="card-title">
+                            <img src="{{biz.image.url}}" width="100%" class="img-responsive" alt="business image">
+                        </div>
+                        <div class="card-footer">
+                            <h5>Address: {{biz.address}}<br>Owner:{{biz.owner}}
+                                <br>Joined: {{biz.create_date|time}}</h5>
+                            <h5>{{biz.details}}</h5>
+                        </div>
+                    </div>
+                    <hr>
+                    {% empty %}
+                    <p>There are no businesses for this hood yet</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
