@@ -37,3 +37,10 @@ class Business(models.Model):
 
     def __str__(self):
         return f'{self.name}'
+
+    class Meta:
+        ordering = ["-create_date"]
+
+    @classmethod
+    def get_by_hood(cls):
+        biz = cls.objects.filter().first()

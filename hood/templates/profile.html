@@ -1,8 +1,34 @@
 {%extends 'base.html'%}
 {% block content %}
+<style>
+</style>
 <div class="container">
-    <img src="{{user.profile.image.url}}" height="100px" width="100px" class="img-responsive" alt="profile">
-    <h2>Hood: {{user.profile.hood}}</h2>
-
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-title">
+                    <img src="{{user.profile.image.url}}" width="100%" height="300px" class="img-responsive" alt="profile">
+                </div>
+                <div class="card-footer">
+                    <p class="text-muted">~~{{user.username|capfirst}}~~</p>
+                    <h5>Hood: {{user.profile.hood}}</h5>
+                    <h5>Bio: {{user.profile.bio}}</h5>
+                    <h5>Contacts: {{user.profile.contacts}}</h5>
+                    <h5>Joined: {{user.profile.join_date|timesince}}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-6">
+            <h1>My Hood : {{user.profile.hood}}</h1>
+            <div class="card">
+                <div class="card-title">
+                    <img src="{{user.profile.hood.image.url}}" width="100%" height="300px" class="img-responsive" alt="hood image">
+                </div>
+            </div>
+            <h2 class="text-center mt-4">Facilities</h2>
+        </div>
+    </div>
 </div>
 {% endblock %}
+    <h2>Hood: {{user.profile.hood}}</h2>
