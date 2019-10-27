@@ -16,6 +16,21 @@ def index(request):
     return render(request, 'index.html', context)
 
 
+@login_required(login_url='/login')
+def AddBusiness(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = AddBusiness(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.author = current_user
+            image.save()
+        return redirect('/')
+    else:
+        form = AddBusiness(auto_id=False)
+    return render(request, 'add_business.html', {"form": form})
+
+
 def register(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
