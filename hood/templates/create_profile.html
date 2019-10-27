@@ -4,12 +4,136 @@
 <title>Create Profile</title>
 {% endblock %}
 {% block content %}
-<div class="container">
-    <form action="" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{u_form|crispy}}
-        {{p_form|crispy}}
-        <button type="submit" class="btn btn-sm btn-outline-info">Submit</button>
-    </form>
+<style>
+    h2{
+        margin-right:30%;
+    }
+    form.form-group{
+        width:100%;
+        margin-left:0.6%;
+        border-left: 1px solid #000;
+        border-right: 1px solid #000;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        padding: 10px ;
+        border-radius:1%;
+        margin: 50px auto;
+    }
+    .col-md-8{
+        background-image: url("https://images.wallpaperscraft.com/image/girl_profile_vector_23752_1920x1080.jpg");
+        background-size:cover;
+        background-color: #5f6769;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height:875px;
+        width:100%;
+        padding:18px;
+    }
+    .col-md-8 {
+        background-color:#5f6769;
+        text-align: center;
+        color:#fff;
+        padding-top:10em;
+    }
+    h1{
+        color:#fff;
+        font-size:60px;
+        font-family: 'Srisakdi', cursive;
+        top:50%;
+    }
+    h2{
+        font-family: 'Srisakdi', cursive;
+        font-size:45px;
+        text-decoration:underline;
+    }
+    a{
+        color: white;
+    }
+</style>
+<script>
+    var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+</script>
+<div class="container-fluid mb-0">
+    <div class="row">
+        <div class="col-md-8">
+            <h1> <strong>
+                <a href="" class="typewrite" data-period="2000"
+                   data-type='[ "Hello, {{user.username|capfirst}}.",
+                        "Welcome to Know my hood.",
+                        "Create your profile.",
+                        "Get to know your hood!" ]'>
+                    <span class="wrap"></span>
+                </a>
+            </strong>
+            </h1>
+        </div>
+        <div class="col-md-4">
+            <h2 class="text-center">Create Profile</h2>
+            <form action="{% url 'create_profile' %}" class="form-group mt-1" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{u_form|crispy}}
+                    {{p_form|crispy}}
+                    <button type="submit" class="btn btn-outline-info ">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}

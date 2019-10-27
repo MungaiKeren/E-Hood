@@ -2,6 +2,9 @@
     form {
         margin-left: 60%;
     }
+    .nav{
+      background-color: #673AB7 !important;
+    }
 </style>
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-primary">
@@ -34,7 +37,7 @@
     <ul class="navbar-nav ml-auto nav-flex-icons">
       {%if user.is_authenticated%}
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="">
+        <a class="nav-link waves-effect waves-light" href="/profile/">
           Welcome {{user.username|capfirst}}
         </a>
       </li>
