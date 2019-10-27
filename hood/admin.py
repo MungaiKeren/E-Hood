@@ -5,3 +5,5 @@ from .models import *
 admin.site.register(Hood)
 admin.site.register(Profile)
 admin.site.register(Business)
+admin.site.register(Facilities)
+admin.site.register(Notices)

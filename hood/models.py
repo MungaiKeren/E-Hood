@@ -14,6 +14,17 @@ class Hood(models.Model):
         return f'{self.name}'
 
 
+class Facilities(models.Model):
+    name = models.CharField(max_length=20)
+    location = models.CharField(max_length=20)
+    image = models.ImageField(upload_to='facilities', blank=True, default='facilities/sample.jpg')
+    pub_date = models.DateTimeField(auto_now_add=True)
+    admin = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.name}'
+
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='profile_photo', blank=True, default='profile_photo/defaultprofile.jpg')
@@ -47,3 +58,12 @@ class Business(models.Model):
         return business
 
 
+class Notices(models.Model):
+    title = models.CharField(max_length=20)
+    post_date = models.DateTimeField(auto_now_add=True)
+    details = models.TextField()
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.title}'
