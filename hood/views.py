@@ -82,3 +82,13 @@ def search_results(request):
     else:
         message = "Search for a business by its name"
         return render(request, 'search.html', {"message": message})
+
+
+@login_required(login_url='/login')
+def notices(request):
+    user = Profile.objects.get(user=request.user.id)
+    alerts = Notices.objects.all().filter(hood=user.hood)
+    context = {
+        "notices": alerts,
+    }
+    return render(request, 'notices.html', context)
