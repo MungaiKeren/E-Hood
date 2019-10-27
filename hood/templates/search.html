@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+{% block content %}
+<div class="container">
+    {% if businesses %}
+    <h4>Found {{ businesses|length }} businesses of searched {{ message }}</h4>
+    {% else %}
+    <h4>Found 0 projects of searched {{ message }}</h4>
+    {% endif %}
+    {% if businesses %}
+    {% for biz in businesses %}
+    <a href="">
+    <img src="{{biz.image.url}}" class="img-responsive" height="300px" width="400px" alt="searched image">
+    </a>
+    {% empty %}
+    <h4>There are no posts for this business.</h4>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

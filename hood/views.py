@@ -66,3 +66,19 @@ def profile(request):
         "user": user,
     }
     return render(request, 'profile.html', context)
+
+
+def search_results(request):
+    if 'businesses' in request.GET and request.GET["businesses"]:
+        search_term = request.GET.get('businesses')
+        searched_businesses = Business.search_by_name(search_term)
+        message = f'{search_term}'
+
+        context = {
+            "message": message,
+            "businesses": searched_businesses,
+        }
+        return render(request, 'search.html', context)
+    else:
+        message = "Search for a business by its name"
+        return render(request, 'search.html', {"message": message})
