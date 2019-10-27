@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a7497d3-d6d1-43ba-ace4-8c714fe8b27e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/media/hood_photo/hood_ExYPOE4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/hood_photo/hood_JjYisTh.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/profile_photo/Squirrel_Wild.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/profile_photo/sea_side.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hood/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/hood/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hood/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/hood/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hood/templates/create_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/hood/templates/create_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hood/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/hood/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hood/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/hood/templates/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hood/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/hood/templates/profile.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
