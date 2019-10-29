@@ -94,6 +94,25 @@ def notices(request):
     return render(request, 'notices.html', context)
 
 
+@login_required(login_url='/login')
+def facilities(request):
+    user = Profile.objects.get(user=request.user.id)
+    neccesities = Facilities.objects.all().filter(hood=user.hood)
+    current_user = request.user
+    if request.method == 'POST':
+        hood = Hood.objects.get(name=user.hood)
+        form = AddFacility(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.author = current_user
+            image.hood = hood
+            image.save()
+            return redirect('/facilities/')
+    else:
+        form = AddFacility(auto_id=False)
+    return render(request, 'facility.html', {"facilities": neccesities, "form": form})
+
+
 @login_required(login_url='/login/')
 def new_notice(request):
     current_user = request.user
@@ -107,13 +126,3 @@ def new_notice(request):
     else:
         form = PostNotice(auto_id=False)
     return render(request, 'new_notice.html', {"form": form})
-
-
-@login_required(login_url='/login')
-def facilities(request):
-    user = Profile.objects.get(user=request.user.id)
-    amenity = Facilities.objects.all().filter(hood=user.hood)
-    context = {
-        "amenities": amenity,
-    }
-    return render(request, 'facility.html', context)

@@ -1,6 +1,11 @@
 {%extends 'base.html'%}
 {% load crispy_forms_tags %}
 {% block content %}
+<style>
+    form{
+        margin-left:2%;
+    }
+</style>
 <div class="container">
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}

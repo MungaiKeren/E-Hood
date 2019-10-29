@@ -37,3 +37,9 @@ class PostNotice(forms.ModelForm):
     class Meta:
         model = Notices
         fields = ["title", "details", "hood"]
+
+
+class AddFacility(forms.ModelForm):
+    class Meta:
+        model = Facilities
+        fields = ["name", "location", "image"]
