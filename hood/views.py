@@ -99,6 +99,6 @@ def facilities(request):
     user = Profile.objects.get(user=request.user.id)
     amenity = Facilities.objects.all().filter(hood=user.hood)
     context = {
-        "facilities": amenity,
+        "amenities": amenity,
     }
     return render(request, 'facility.html', context)

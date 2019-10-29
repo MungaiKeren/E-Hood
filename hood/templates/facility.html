@@ -1,6 +1,11 @@
 {% extends 'base.html'%}
 {% block content%}
 <div class="container">
-    You are welcome to view facilities in your hood
+    <div class="row">
+        {% for facility in amenities %}
+        {% empty %}
+        <p>No facilities have been posted yet</p>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
