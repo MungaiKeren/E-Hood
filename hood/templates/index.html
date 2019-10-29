@@ -3,14 +3,14 @@
 {{block.super}}
 <style>
     .card{
-        height:90vh;
+        height:80vh;
     }
     .card-footer{
         height:55vh;
     }
 </style>
 <div class="container-fluid mt-4">
-    <h1 class="text-center">Businesses around {{biz.hood.name}}</h1>
+    <h1 class="text-center">Businesses around: {{business|length}}</h1>
     <hr>
     <div class="row">
         {% if business %}

@@ -42,4 +42,4 @@ class PostNotice(forms.ModelForm):
 class AddFacility(forms.ModelForm):
     class Meta:
         model = Facilities
-        fields = ["name", "location", "image"]
+        fields = ["name", "location", "contact", "image"]

@@ -17,6 +17,7 @@ class Hood(models.Model):
 class Facilities(models.Model):
     name = models.CharField(max_length=20)
     location = models.CharField(max_length=20)
+    contact = models.CharField(max_length=30)
     image = models.ImageField(upload_to='facilities', blank=True, default='facilities/sample.jpg')
     pub_date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -68,3 +69,6 @@ class Notices(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+
+    class Meta:
+        ordering = ['-post_date']
