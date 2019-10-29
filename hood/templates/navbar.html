@@ -18,13 +18,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="/notices/">Notices</a>
+        <a class="nav-link" href="{% url 'notices'%}">Notices</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/facilities/">Facilities</a>
+        <a class="nav-link" href="{% url 'facilities'%}">Facilities</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="add_business/">New_Business</a>
+        <a class="nav-link" href="{% url 'addBusiness' %}">New_Business</a>
       </li>
       <li class="nav-item dropdown">
           <form class="form-inline navbar-form" role="search" action="{%url 'search'%}">
