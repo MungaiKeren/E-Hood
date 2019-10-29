@@ -17,17 +17,17 @@ def index(request):
 
 
 @login_required(login_url='/login')
-def AddBusiness(request):
+def post_business(request):
     current_user = request.user
     if request.method == 'POST':
-        form = AddBusiness(request.POST, request.FILES)
+        form = PostBusinessForm(request.POST, request.FILES)
         if form.is_valid():
             image = form.save(commit=False)
-            image.author = current_user
+            image.owner = current_user
             image.save()
         return redirect('/')
     else:
-        form = AddBusiness(auto_id=False)
+        form = PostBusinessForm(auto_id=False)
     return render(request, 'add_business.html', {"form": form})
 
 
@@ -106,8 +106,7 @@ def new_notice(request):
             return redirect('/notices/')
         else:
             form = NewNotice(auto_id=False)
-        return render(request, 'new_notice.html', {"form":form})
-
+        return render(request, 'new_notice.html', {"form": form})
 
 
 @login_required(login_url='/login')

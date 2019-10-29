@@ -43,8 +43,8 @@ class Business(models.Model):
     address = models.CharField(max_length=20)
     create_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='biz_pic/', blank=True, default='biz_pic/bizpic.jpg')
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     details = models.TextField(max_length=500)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
 
     def __str__(self):

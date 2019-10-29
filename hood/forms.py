@@ -27,10 +27,10 @@ class ProfileUpdateForm(forms.ModelForm):
         fields = ["contacts", "image", "bio", "hood"]
 
 
-class AddBusiness(forms.ModelForm):
+class PostBusinessForm(forms.ModelForm):
     class Meta:
         model = Business
-        fields = ["name", "address", "image", "details"]
+        fields = ["name", "address", "image", "details", "hood"]
 
 
 class NewNotice(forms.ModelForm):
