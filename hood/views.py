@@ -98,15 +98,15 @@ def notices(request):
 def new_notice(request):
     current_user = request.user
     if request.method == 'POST':
-        form = NewNotice(request.POST, request.FILES)
+        form = PostNotice(request.POST, request.FILES)
         if form.is_valid():
-            image = form.save(commit=False)
-            image.author = current_user
-            image.save()
-            return redirect('/notices/')
-        else:
-            form = NewNotice(auto_id=False)
-        return render(request, 'new_notice.html', {"form": form})
+            title = form.save(commit=False)
+            title.author = current_user
+            title.save()
+        return redirect('/notices/')
+    else:
+        form = PostNotice(auto_id=False)
+    return render(request, 'new_notice.html', {"form": form})
 
 
 @login_required(login_url='/login')

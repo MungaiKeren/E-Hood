@@ -33,7 +33,7 @@ class PostBusinessForm(forms.ModelForm):
         fields = ["name", "address", "image", "details", "hood"]
 
 
-class NewNotice(forms.ModelForm):
+class PostNotice(forms.ModelForm):
     class Meta:
         model = Notices
-        fields = ["title", "details"]
+        fields = ["title", "details", "hood"]
