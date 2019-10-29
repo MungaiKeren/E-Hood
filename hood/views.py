@@ -94,6 +94,22 @@ def notices(request):
     return render(request, 'notices.html', context)
 
 
+@login_required(login_url='/login/')
+def new_notice(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewNotice(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.author = current_user
+            image.save()
+            return redirect('/notices/')
+        else:
+            form = NewNotice(auto_id=False)
+        return render(request, 'new_notice.html', {"form":form})
+
+
+
 @login_required(login_url='/login')
 def facilities(request):
     user = Profile.objects.get(user=request.user.id)

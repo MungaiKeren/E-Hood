@@ -31,3 +31,9 @@ class AddBusiness(forms.ModelForm):
     class Meta:
         model = Business
         fields = ["name", "address", "image", "details"]
+
+
+class NewNotice(forms.ModelForm):
+    class Meta:
+        model = Notices
+        fields = ["title", "details"]
