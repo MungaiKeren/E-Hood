@@ -88,10 +88,19 @@ def search_results(request):
 def notices(request):
     user = Profile.objects.get(user=request.user.id)
     alerts = Notices.objects.all().filter(hood=user.hood)
-    context = {
-        "notices": alerts,
-    }
-    return render(request, 'notices.html', context)
+    current_user = request.user
+    if request.method == 'POST':
+        hood = Hood.objects.get(name=user.hood)
+        form = PostNotice(request.POST, request.FILES)
+        if form.is_valid():
+            title = form.save(commit=False)
+            title.author = current_user
+            title.hood = hood
+            title.save()
+            return redirect('/notices/')
+    else:
+        form = PostNotice(auto_id=False)
+    return render(request, 'notices.html', {"notices": alerts, "form": form})
 
 
 @login_required(login_url='/login')
@@ -113,16 +122,3 @@ def facilities(request):
     return render(request, 'facility.html', {"facilities": neccesities, "form": form})
 
 
-@login_required(login_url='/login/')
-def new_notice(request):
-    current_user = request.user
-    if request.method == 'POST':
-        form = PostNotice(request.POST, request.FILES)
-        if form.is_valid():
-            title = form.save(commit=False)
-            title.author = current_user
-            title.save()
-        return redirect('/notices/')
-    else:
-        form = PostNotice(auto_id=False)
-    return render(request, 'new_notice.html', {"form": form})

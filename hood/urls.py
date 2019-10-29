@@ -11,7 +11,6 @@ urlpatterns = [
     path('post_business/', views.post_business, name='post_business'),
     path('search/', views.search_results, name='search'),
     path('notices/', views.notices, name='notices'),
-    path('new_notice/', views.new_notice, name='new_notice'),
     path('facilities/', views.facilities, name='facilities'),
 ]
 if settings.DEBUG:
