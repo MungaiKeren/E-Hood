@@ -7,7 +7,7 @@
     }
 </style>
 <div class="container-fluid mt-4">
-    <h1 class="text-center">Businesses around {{hood.name}}</h1>
+    <h1 class="text-center">Businesses around {{biz.hood.name}}</h1>
     <hr>
     <div class="row">
         {% if business %}
@@ -28,7 +28,7 @@
                 </div>
                 <div class="card-title">
                     <div class="view" style="height: 245px; padding:2%;">
-                        <img src="{{biz.image.url}}" width="100%" class="img-responsive" alt="business image">
+                        <img src="{{biz.image.url}}" width="100%" height="300px" class="img-responsive" alt="business image">
                     </div>
                 </div>
                 <div class="card-footer">
