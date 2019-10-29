@@ -10,7 +10,8 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('add_business/', views.AddBusiness, name='addBusiness'),
     path('search/', views.search_results, name='search'),
-    path('notices/', views.notices, name='notices')
+    path('notices/', views.notices, name='notices'),
+    path('facilities/', views.facilities, name='facilities')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

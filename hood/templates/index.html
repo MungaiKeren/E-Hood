@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="card-title">
-                    <div class=" view overlay zoom" style="height: 245px; padding:2%;">
+                    <div class="view" style="height: 245px; padding:2%;">
                         <img src="{{biz.image.url}}" width="100%" class="img-responsive" alt="business image">
                     </div>
                 </div>
@@ -44,28 +44,3 @@
     </div>
 </div>
 {% endblock %}
-
-<div class="col-md-8 container">
-            <div class="row">
-                {% for biz in business %}
-                <div class="col-md-4">
-                    <div class="card card-default">
-                        <div class="card-heading">
-                            <h5>{{biz.name}}</h5>
-                        </div>
-                        <div class="card-title">
-                            <img src="{{biz.image.url}}" width="100%" class="img-responsive" alt="business image">
-                        </div>
-                        <div class="card-footer">
-                            <h5>Address: {{biz.address}}<br>Owner:{{biz.owner}}
-                                <br>Joined: {{biz.create_date|time}}</h5>
-                            <h5>{{biz.details}}</h5>
-                        </div>
-                    </div>
-                    <hr>
-                    {% empty %}
-                    <p>There are no businesses for this hood yet</p>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>

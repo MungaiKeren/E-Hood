@@ -20,6 +20,7 @@ class Facilities(models.Model):
     image = models.ImageField(upload_to='facilities', blank=True, default='facilities/sample.jpg')
     pub_date = models.DateTimeField(auto_now_add=True)
     admin = models.ForeignKey(User, on_delete=models.CASCADE)
+    hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.name}'
