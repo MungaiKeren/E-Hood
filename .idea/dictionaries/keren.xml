@@ -2,6 +2,7 @@
   <dictionary name="keren">
     <words>
       <w>bizpic</w>
+      <w>collectstatic</w>
       <w>defaultprofile</w>
       <w>endblock</w>
       <w>endfor</w>
