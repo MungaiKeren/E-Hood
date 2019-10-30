@@ -23,8 +23,34 @@ You need to have the following installed:
 * Pip ```curl https://bootstrap.pypa.io/get-pip|python```
 * Virtual ```$ python3.6 -m venv pip virtual```
 * Activate the virtual environment ```source virtual/bin/activate```
-* Django 1.11.5 ```(virtual)$ pip install django==2.2.6```
+* Django==2.2.6 ```(virtual)$ pip install django==2.2.6```
 * Get all requirements ```pip freeze > requirements.txt```
+
+### Setting up the database
+The database in use for this project is Postgres
+* Ensure postgress is installed. ``` $ sudo apt-get update```
+* Step 2 ```sudo apt-get install postgresql postgresql-contrib```
+
+## Connect to postregsql
+* ``` $ sudo su - postgres```
+* ``` $ psql ```
+
+## Set up the database to the django application
+In the settings.py file,
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hoody',
+        'USER': '<your postgres user name>',
+        'PASSWORD': '<the database password>'
+    }
+}
+
+### Run migrations
+``` $ python manage.py makemigrations ```
+``` $ python manage.py migrate ```
+
 
 ### Running the server
 ```python manage.py runserver```
