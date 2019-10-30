@@ -42,8 +42,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'hoody',
-        'USER': '<your postgres user name>',
-        'PASSWORD': '<the database password>'
+        'USER': '< your postgres user name>',
+        'PASSWORD': '< the database password>'
     }
 }
 
