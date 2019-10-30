@@ -4,7 +4,7 @@
 </style>
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3 mt-3">
             <div class="card">
                 <div class="card-title">
                     <img src="{{user.profile.image.url}}" width="100%" height="300px" class="img-responsive" alt="profile">
@@ -23,12 +23,10 @@
             <h1>My Hood : {{user.profile.hood}}</h1>
             <div class="card">
                 <div class="card-title">
-                    <img src="{{user.profile.hood.image.url}}" width="100%" height="300px" class="img-responsive" alt="hood image">
+                    <img src="{{user.profile.hood.image.url}}" width="100%" height="400px" class="img-responsive" alt="hood image">
                 </div>
             </div>
-            <h2 class="text-center mt-4">Neighbours</h2>
         </div>
     </div>
 </div>
 {% endblock %}
-    <h2>Hood: {{user.profile.hood}}</h2>
